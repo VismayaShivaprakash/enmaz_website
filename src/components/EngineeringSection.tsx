@@ -28,25 +28,28 @@ const EngineeringSection = () => {
     <section className="section-padding bg-muted/30">
       <div className="max-w-7xl mx-auto">
         <h2 className="section-title text-foreground">Engineering & Analysis Services</h2>
-        <p className="section-subtitle mb-12">
+        <p className="section-subtitle mb-16">
           Advanced engineering analysis powered by precision instrumentation.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service) => (
+        {/* Horizontal masonry-style layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+          {services.map((service, i) => (
             <div
               key={service.title}
-              className="bg-card border border-border rounded-lg p-6 card-hover group"
+              className={`group relative flex items-start gap-5 p-8 md:p-10 border-border transition-colors duration-300 hover:bg-accent/50 cursor-default ${
+                i < 2 ? "border-b" : ""
+              } ${i % 2 === 0 ? "md:border-r" : ""}`}
             >
-              <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-5 h-5 text-primary" />
+              <service.icon className="w-5 h-5 text-primary mt-1 shrink-0 group-hover:scale-110 transition-transform duration-300" />
+              <div>
+                <h3 className="font-display font-semibold text-foreground mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="font-display font-semibold text-card-foreground mb-2 text-sm">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {service.description}
-              </p>
             </div>
           ))}
         </div>
