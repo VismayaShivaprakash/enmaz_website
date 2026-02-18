@@ -32,25 +32,38 @@ const ProductsSection = () => {
     <section id="products" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
         <h2 className="section-title text-foreground">Our Products</h2>
-        <p className="section-subtitle mb-12">
+        <p className="section-subtitle mb-16">
           Industrial-grade IoT devices designed for reliability and precision.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product) => (
+        <div className="space-y-0">
+          {products.map((product, i) => (
             <div
               key={product.name}
-              className="group bg-card border border-border rounded-lg p-6 card-hover cursor-pointer"
+              className="group relative grid grid-cols-1 md:grid-cols-[80px_1fr_1.5fr] items-center gap-4 md:gap-8 py-8 border-b border-border last:border-b-0 cursor-pointer hover:bg-muted/20 transition-all duration-300 px-4 -mx-4 rounded-sm"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <product.icon className="w-6 h-6 text-primary" />
+              {/* Number + Icon */}
+              <div className="flex items-center gap-4 md:flex-col md:items-center md:gap-2">
+                <span className="text-xs font-mono text-muted-foreground tracking-widest">
+                  0{i + 1}
+                </span>
+                <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all duration-300">
+                  <product.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+                </div>
               </div>
-              <h3 className="font-display font-semibold text-card-foreground mb-2 text-sm leading-tight">
+
+              {/* Title */}
+              <h3 className="font-display font-semibold text-foreground text-lg md:text-xl group-hover:text-primary transition-colors duration-300">
                 {product.name}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+
+              {/* Description */}
+              <p className="text-muted-foreground text-sm leading-relaxed md:text-right">
                 {product.description}
               </p>
+
+              {/* Hover accent line */}
+              <div className="absolute left-0 top-0 bottom-0 w-px bg-primary scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
             </div>
           ))}
         </div>
