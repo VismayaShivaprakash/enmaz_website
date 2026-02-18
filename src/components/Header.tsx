@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import logo from "../assets/WhatsApp Image 2026-02-16 at 4.41.49 PM.jpeg";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -28,15 +29,14 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-background/95 backdrop-blur-md border-b border-border shadow-lg shadow-background/50"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
-        <a href="#home" className="font-display text-xl font-bold tracking-tight text-foreground">
-          <span className="text-primary">ENMAZ</span> Engineering
+        <a href="#home" className="flex items-center">
+          <img src={logo} alt="Company Logo" className="h-10 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}

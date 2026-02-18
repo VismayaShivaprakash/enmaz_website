@@ -40,20 +40,20 @@ const ProductsSection = () => {
           {products.map((product, i) => (
             <div
               key={product.name}
-              className="group relative grid grid-cols-1 md:grid-cols-[80px_1fr_1.5fr] items-center gap-4 md:gap-8 py-8 border-b border-border last:border-b-0 cursor-pointer hover:bg-muted/20 transition-all duration-300 px-4 -mx-4 rounded-sm"
+              className="group relative grid grid-cols-1 md:grid-cols-[80px_1fr_1.5fr] items-center gap-4 md:gap-8 py-8 border-b border-border last:border-b-0 cursor-pointer hover:bg-green-500/5 transition-all duration-300 px-4 -mx-4 rounded-sm"
             >
               {/* Number + Icon */}
               <div className="flex items-center gap-4 md:flex-col md:items-center md:gap-2">
                 <span className="text-xs font-mono text-muted-foreground tracking-widest">
                   0{i + 1}
                 </span>
-                <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all duration-300">
-                  <product.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+                <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:border-white/30 group-hover:bg-white/5 transition-all duration-300">
+                  <product.icon className="w-4 h-4 text-muted-foreground group-hover:text-white transition-colors duration-300" />
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="font-display font-semibold text-foreground text-lg md:text-xl group-hover:text-primary transition-colors duration-300">
+              <h3 className="font-display font-semibold text-foreground text-lg md:text-xl group-hover:text-white transition-colors duration-300">
                 {product.name}
               </h3>
 
@@ -63,7 +63,7 @@ const ProductsSection = () => {
               </p>
 
               {/* Hover accent line */}
-              <div className="absolute left-0 top-0 bottom-0 w-px bg-primary scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-red-600 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
             </div>
           ))}
         </div>

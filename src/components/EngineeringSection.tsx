@@ -37,11 +37,11 @@ const EngineeringSection = () => {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`group relative flex items-start gap-5 p-8 md:p-10 border-border transition-colors duration-300 hover:bg-accent/50 cursor-default ${
-                i < 2 ? "border-b" : ""
-              } ${i % 2 === 0 ? "md:border-r" : ""}`}
+              className={`group relative flex items-start gap-5 p-8 md:p-10 border-border transition-colors duration-300 hover:bg-green-500/5 cursor-default ${i < 2 ? "border-b" : ""
+                } ${i % 2 === 0 ? "md:border-r" : ""}`}
             >
-              <service.icon className="w-5 h-5 text-primary mt-1 shrink-0 group-hover:scale-110 transition-transform duration-300" />
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-red-600 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <service.icon className="w-5 h-5 text-white/80 mt-1 shrink-0 group-hover:scale-110 transition-transform duration-300" />
               <div>
                 <h3 className="font-display font-semibold text-foreground mb-2">
                   {service.title}

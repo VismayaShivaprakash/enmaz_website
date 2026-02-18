@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <h3 className="font-display text-lg font-bold text-foreground mb-3">
-            <span className="text-primary">ENMAZ</span> Engineering Solutions
+            <span className="text-white">ENMAZ</span> Engineering Solutions
           </h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
             Bengaluru, India
